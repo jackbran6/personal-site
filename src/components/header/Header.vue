@@ -1,5 +1,7 @@
 <template>
-  <header class="header" />
+  <header class="header">
+    <menu-bar />
+  </header>
 </template>
 
 <style lang="scss" scoped>
@@ -8,6 +10,6 @@
 .header {
   @include type(14px, 18px);
 
-  display: flex;
+  display: grid;
 }
 </style>

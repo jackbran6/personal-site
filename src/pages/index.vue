@@ -1,17 +1,5 @@
 <template>
-  <Intro>
-    <Heading content="personal-site" />
-    <p>
-      Welcome to the
-      <a
-        href="https://formfunfunction.com/"
-        target="_blank"
-        rel="noreferrer"
-      >formfunfunction</a>
-      Nuxt starter project. Head to<Code>/src/pages/index.vue</Code> to get
-      stuck in.
-    </p>
-  </Intro>
+  <div class="container"></div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
