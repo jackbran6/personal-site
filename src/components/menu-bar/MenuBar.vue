@@ -20,7 +20,9 @@ export default Vue.extend({})
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   justify-self: center;
+  margin-top: 50px;
   width: 80vw;
 }
 .menu {
@@ -31,5 +33,8 @@ export default Vue.extend({})
 }
 .menu-item {
   padding-right: 20px;
+}
+h1 {
+  margin: 0;
 }
 </style>
