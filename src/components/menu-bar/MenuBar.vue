@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h1>jack branthwaite</h1>
+    <nuxt-link to="/" style="text-decoration: none">
+      <h1>jack branthwaite</h1>
+    </nuxt-link>
     <div class="menu">
       <nuxt-link to="about" class="menu-item">about</nuxt-link>
       <nuxt-link to="work" class="menu-item">work</nuxt-link>
@@ -11,7 +13,9 @@
 
 <script lang="ts">
 import Vue from 'vue'
-export default Vue.extend({})
+export default Vue.extend({
+  name: 'MenuBar'
+})
 </script>
 
 <style lang="scss" scoped>
