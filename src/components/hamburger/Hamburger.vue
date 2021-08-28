@@ -19,6 +19,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '~assets/styles/config';
 .container {
+  background-color: #fff;
   display: flex;
   justify-content: flex-end;
   margin-left: 10vw;
