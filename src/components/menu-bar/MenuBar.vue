@@ -17,15 +17,22 @@ export default Vue.extend({
   },
   data() {
     return {
-      mobileView: true
+      mobileView: false
     }
   },
-  created() {
-    this.handleView()
+  mounted() {
+    window.addEventListener('resize', this.checkWidth)
+  },
+  destroyed() {
+    window.removeEventListener('reize', this.checkWidth)
   },
   methods: {
-    handleView() {
-      this.mobileView = window.innerWidth <= 990
+    checkWidth() {
+      if (window.innerWidth <= 991) {
+        this.mobileView = true
+      } else if (window.innerWidth > 992) {
+        this.mobileView = false
+      }
     }
   }
 })
