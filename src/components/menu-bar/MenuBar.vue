@@ -21,6 +21,7 @@ export default Vue.extend({
     }
   },
   mounted() {
+    this.checkWidth()
     window.addEventListener('resize', this.checkWidth)
   },
   destroyed() {
