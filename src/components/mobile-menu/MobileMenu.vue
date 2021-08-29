@@ -5,7 +5,7 @@
         >about</nuxt-link
       >
       <nuxt-link to="work" class="menu-item" :class="menuOpen && 'item-open'"
-        >work</nuxt-link
+        >portfolio</nuxt-link
       >
       <nuxt-link
         to="contact"
@@ -26,6 +26,11 @@ export default Vue.extend({
       type: Boolean,
       default: false
     }
+  },
+  methods: {
+    closeMenu() {
+      this.$emit('closeMenu')
+    }
   }
 })
 </script>
@@ -33,7 +38,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '~assets/styles/config';
 .menu {
-  background-color: $blue;
+  background-color: $jet;
   display: flex;
   flex-direction: column;
   height: 0;
@@ -53,7 +58,7 @@ export default Vue.extend({
   transition: 1s ease;
 }
 .item-open {
-  color: $yellow;
+  color: $orange;
   opacity: 1;
 }
 .bottom {

@@ -13,7 +13,6 @@
   display: grid;
 }
 .menu {
-  position: fixed;
   width: 96vw;
 }
 </style>

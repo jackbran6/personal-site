@@ -61,6 +61,7 @@ export default Vue.extend({
 }
 
 .hamburger span:nth-child(2) {
+  margin-left: 3px;
   top: 4px;
   transform-origin: left center;
 }
@@ -71,7 +72,7 @@ export default Vue.extend({
 }
 
 .hamburger.open span:nth-child(1) {
-  background-color: $yellow;
+  background-color: $orange;
   left: 8px;
   top: -6px;
   transform: rotate(45deg);
@@ -83,7 +84,7 @@ export default Vue.extend({
 }
 
 .hamburger.open span:nth-child(3) {
-  background: $yellow;
+  background: $orange;
   left: 8px;
   top: 15px;
   transform: rotate(-45deg);

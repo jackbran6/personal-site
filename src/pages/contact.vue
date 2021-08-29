@@ -17,7 +17,7 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .container {
-  margin: auto;
+  margin-top: 20vw;
   width: 80vw;
 }
 </style>

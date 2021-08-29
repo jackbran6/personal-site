@@ -31,6 +31,11 @@ export default Vue.extend({
       menuOpen: false
     }
   },
+  watch: {
+    $route() {
+      this.menuOpen = false
+    }
+  },
   mounted() {
     this.checkWidth()
     window.addEventListener('resize', this.checkWidth)
@@ -44,6 +49,7 @@ export default Vue.extend({
         this.mobileView = true
       } else if (window.innerWidth > 992) {
         this.mobileView = false
+        this.menuOpen = false
       }
     }
   }
@@ -60,7 +66,7 @@ export default Vue.extend({
 }
 .menu-bar {
   align-items: center;
-  background-color: $blue;
+  background-color: $jet;
   padding: 20px;
 }
 .menu-open {
@@ -73,7 +79,7 @@ h1 {
   color: $bright-white;
 
   :hover {
-    color: $yellow;
+    color: $orange;
   }
 }
 .mobile-menu {
