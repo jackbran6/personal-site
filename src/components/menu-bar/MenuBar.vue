@@ -1,11 +1,13 @@
 <template>
-  <div class="menu-bar" :class="menuOpen && 'menu-open'">
-    <div class="container">
-      <nuxt-link to="/" style="text-decoration: none">
-        <h1 class="name">jack branthwaite</h1>
-      </nuxt-link>
-      <navigation-bar v-if="!mobileView" />
-      <hamburger v-if="mobileView" @menuStatus="menuOpen = !menuOpen" />
+  <div>
+    <div class="menu-bar" :class="menuOpen && 'menu-open'">
+      <div class="container">
+        <nuxt-link to="/" style="text-decoration: none">
+          <h1 class="name">jack branthwaite</h1>
+        </nuxt-link>
+        <navigation-bar v-if="!mobileView" />
+        <hamburger v-if="mobileView" @menuStatus="menuOpen = !menuOpen" />
+      </div>
     </div>
     <mobile-menu class="mobile-menu" :menu-open="menuOpen" />
   </div>
