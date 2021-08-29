@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <menu-bar />
+    <menu-bar class="menu" />
   </header>
 </template>
 
@@ -11,5 +11,9 @@
   @include type(14px, 18px);
 
   display: grid;
+}
+.menu {
+  position: fixed;
+  width: 96vw;
 }
 </style>

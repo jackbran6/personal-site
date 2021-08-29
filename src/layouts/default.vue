@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Header />
     <nuxt />
     <Footer />
@@ -17,3 +17,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+.container {
+  margin: 2vw;
+}
+</style>
