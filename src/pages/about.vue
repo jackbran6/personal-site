@@ -1,21 +1,23 @@
 <template>
-  <div class="container"></div>
+  <div class="container">
+    <h1 class="title">about</h1>
+  </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Home',
-  components: {},
+  name: 'About',
 
   head: {
-    title: 'Hello world!'
+    title: 'about'
   }
 })
 </script>
 
 <style lang="scss" scoped>
 .container {
+  margin: auto;
   width: 80vw;
 }
 </style>
