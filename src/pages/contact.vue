@@ -10,7 +10,7 @@
     <div class="contact-container">
       <h1 class="sub-title">linkedin</h1>
       <a href="https://www.linkedin.com/in/jack-branthwaite/">
-        <p class="link">linkedin.com/in/jack-branthwaite/</p></a
+        <p class="link">linkedin.com/in/jack-branthwaite</p></a
       >
     </div>
     <div class="contact-container">
