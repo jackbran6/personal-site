@@ -20,6 +20,6 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 .container {
-  margin: 2vw;
+  margin: 5vw;
 }
 </style>
