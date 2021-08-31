@@ -1,6 +1,6 @@
 <template>
   <header class="header">
-    <menu-bar class="menu" />
+    <!-- <menu-bar class="menu" /> -->
   </header>
 </template>
 
