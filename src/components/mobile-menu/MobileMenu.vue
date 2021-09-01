@@ -1,22 +1,17 @@
 <template>
-  <div class="container">
-    <div class="mobile-menu">
-      <hamburger @menuStatus="menuOpen = !menuOpen" />
-      <div
-        v-if="menuOpen"
-        class="mobile-dropdown"
-        :class="menuOpen && 'menu-open'"
-      >
-        <nuxt-link class="link" to="portfolio">
-          <p class="mobile-item" :class="menuOpen && 'item-open'">portfolio</p>
-        </nuxt-link>
-        <nuxt-link class="link" to="about">
-          <p class="mobile-item" :class="menuOpen && 'item-open'">about</p>
-        </nuxt-link>
-        <nuxt-link class="link" to="contact">
-          <p class="mobile-item" :class="menuOpen && 'item-open'">contact</p>
-        </nuxt-link>
-      </div>
+  <div>
+    <hamburger @menuStatus="menuOpen = !menuOpen" />
+
+    <div class="mobile-dropdown" :class="menuOpen && 'menu-open'">
+      <nuxt-link to="portfolio" class="link">
+        <p class="mobile-item" :class="menuOpen && 'item-open'">portfolio</p>
+      </nuxt-link>
+      <nuxt-link class="link" to="about">
+        <p class="mobile-item" :class="menuOpen && 'item-open'">about</p>
+      </nuxt-link>
+      <nuxt-link class="link" to="contact">
+        <p class="mobile-item" :class="menuOpen && 'item-open'">contact</p>
+      </nuxt-link>
     </div>
   </div>
 </template>
@@ -59,26 +54,16 @@ export default Vue.extend({
 <style lang="scss" scoped>
 @import '~assets/styles/config';
 
-.menu-item {
-  color: $black;
-  justify-self: flex-end;
-  transition: all 0.5s ease;
-
-  &:hover {
-    color: $orange;
-  }
-}
 .mobile-item {
   color: $black;
   justify-self: flex-end;
-  opacity: 0;
+  opacity: 1;
   transition: 1s ease;
 
   &:hover {
     color: $orange;
   }
 }
-
 .item-open {
   opacity: 1;
 }
@@ -87,16 +72,17 @@ export default Vue.extend({
   text-decoration: none;
 }
 .mobile-dropdown {
-  display: flex;
-  flex-direction: column;
+  display: none;
   height: 0;
-  padding-top: 2vw;
-  transition: 2s ease-in-out;
+  margin-top: 2vw;
+  position: relative;
+  transition: 0.5s ease-in-out;
 }
 
 .menu-open {
+  display: flex;
+  flex-direction: column;
   height: 100px;
   opacity: 1;
-  z-index: 2;
 }
 </style>

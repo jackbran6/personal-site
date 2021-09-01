@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div>
     <desktop-menu v-if="!mobileView" />
     <mobile-menu v-else />
   </div>
@@ -43,45 +43,4 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '~assets/styles/config';
-
-.menu-item {
-  color: $black;
-  justify-self: flex-end;
-  transition: all 0.5s ease;
-
-  &:hover {
-    color: $orange;
-  }
-}
-.mobile-item {
-  color: $black;
-  justify-self: flex-end;
-  opacity: 0;
-  transition: 1s ease;
-
-  &:hover {
-    color: $orange;
-  }
-}
-
-.item-open {
-  opacity: 1;
-}
-
-.link {
-  text-decoration: none;
-}
-.mobile-dropdown {
-  display: flex;
-  flex-direction: column;
-  height: 0;
-  padding-top: 2vw;
-  transition: 2s ease-in-out;
-}
-
-.menu-open {
-  height: 100px;
-  opacity: 1;
-  z-index: 2;
-}
 </style>
