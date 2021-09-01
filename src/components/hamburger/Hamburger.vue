@@ -23,7 +23,6 @@ export default Vue.extend({
     menuClicked() {
       this.menuOpen = !this.menuOpen
       this.$emit('menuStatus')
-      console.log(this.menuOpen)
     }
   }
 })
@@ -45,7 +44,7 @@ export default Vue.extend({
 }
 
 .hamburger span {
-  background: $bright-white;
+  background: $black;
   display: block;
   height: 2px;
   left: 0;
