@@ -64,25 +64,30 @@ export default Vue.extend({
     color: $orange;
   }
 }
-.item-open {
-  opacity: 1;
-}
 
 .link {
   text-decoration: none;
 }
 .mobile-dropdown {
+  animation: growDown 300ms ease-in-out;
   display: none;
-  height: 0;
   margin-top: 2vw;
-  position: relative;
-  transition: 0.5s ease-in-out;
+  transform-origin: top;
+}
+
+@keyframes growDown {
+  0% {
+    transform: scaleY(0);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
 }
 
 .menu-open {
+  align-items: flex-end;
   display: flex;
   flex-direction: column;
-  height: 100px;
-  opacity: 1;
 }
 </style>
