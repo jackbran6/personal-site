@@ -28,21 +28,24 @@ export default Vue.extend({
 @import '~assets/styles/config';
 .container {
   margin: auto;
+  margin-top: 2vw;
   width: 80vw;
 }
 .card-container {
   display: grid;
-  gap: 1vw;
+  gap: 2vw;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 2vw;
 }
 @include tablet {
   .card-container {
+    gap: 4vw;
     grid-template-columns: 1fr 1fr;
   }
 }
 @include mobile-l {
   .card-container {
+    gap: 50px;
     grid-template-columns: 1fr;
   }
 }
