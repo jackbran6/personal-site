@@ -1,7 +1,7 @@
 <template>
   <nuxt-link class="link" :to="link">
     <div class="card">
-      <h6 class="title">{{ title }}</h6>
+      <h1 class="title">{{ title }}</h1>
       <p class="description">
         {{ description }}
       </p>
@@ -33,20 +33,19 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 @import '~assets/styles/config';
+
 /* stylelint-disable max-nesting-depth */
 .title {
-  transition: all 0.5s ease;
+  font-size: 25px;
 }
 .card {
   border: #000 solid 1px;
   box-shadow: 5px 10px;
   min-width: 300px;
   padding: 2vw;
-
+  transition: all 0.5s ease;
   &:hover {
-    .title {
-      color: $orange;
-    }
+    box-shadow: $orange 5px 10px;
   }
 }
 </style>
