@@ -41,6 +41,7 @@ export default Vue.extend({
 .card {
   border: #000 solid 1px;
   box-shadow: 5px 10px;
+  min-height: 150px;
   min-width: 300px;
   padding: 2vw;
   transition: all 0.5s ease;
@@ -51,5 +52,8 @@ export default Vue.extend({
 .image {
   height: 150px;
   width: 300px;
+}
+.description {
+  font-size: 12px;
 }
 </style>

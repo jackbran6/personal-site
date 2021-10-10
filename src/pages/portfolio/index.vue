@@ -3,17 +3,29 @@
     <h1 class="title">portfolio</h1>
     <div class="card-container">
       <portfolio-card
+        title="Photography Website"
+        description="Personal photography website built in HTML, CSS, JavaScript, and PHP for  a university project"
+      />
+      <portfolio-card
+        title="Workplace Employee Site"
+        description="Group unversity project built with the MERN stack. "
+      />
+      <portfolio-card
+        title="Android Web Browser"
+        description="Web browser built in Java for a university project"
+      />
+      <portfolio-card
+        title="Android Todo List"
+        description="Todo list application built in Java for a university project"
+      />
+      <portfolio-card
+        title="iOS Todo List"
+        description="Todo list application built in Swift for a university project"
+      />
+      <portfolio-card
         title="Todo List Website"
         description="A simple todo list application built in Vanilla JavaScript. Based on a tutorial found on YouTube"
       />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
     </div>
   </div>
 </template>
