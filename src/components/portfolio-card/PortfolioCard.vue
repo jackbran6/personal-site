@@ -1,5 +1,5 @@
 <template>
-  <nuxt-link class="link" :to="link">
+  <nuxt-link class="link" :to="'portfolio/project/' + link">
     <div class="card">
       <h1 class="title">{{ title }}</h1>
       <p class="description">

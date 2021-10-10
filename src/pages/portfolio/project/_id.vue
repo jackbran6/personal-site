@@ -1,26 +1,12 @@
 <template>
   <div class="container">
-    <h1 class="title">portfolio</h1>
-    <div class="card-container">
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-      <portfolio-card />
-    </div>
+    <h1 class="title">{{}}</h1>
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue'
-import PortfolioCard from '~/components/portfolio-card/PortfolioCard.vue'
 
-export default Vue.extend({
-  components: { PortfolioCard }
-})
+export default Vue.extend({})
 </script>
 
 <style lang="scss" scoped>
