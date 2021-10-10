@@ -34,10 +34,16 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+.container {
+  margin-top: 2vw;
+}
 .sub-title {
   margin: 0;
 }
 .contact-container {
+  margin-bottom: 2vw;
+}
+.title {
   margin-bottom: 2vw;
 }
 </style>
