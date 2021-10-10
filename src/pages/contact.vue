@@ -4,19 +4,19 @@
     <div class="contact-container">
       <h1 class="sub-title">email</h1>
       <a href="mailto: jack.branthwaite@gmail.com">
-        <p class="link">jack.branthwaite@gmail.com</p></a
+        <span class="link">jack.branthwaite@gmail.com</span></a
       >
     </div>
     <div class="contact-container">
       <h1 class="sub-title">linkedin</h1>
       <a href="https://www.linkedin.com/in/jack-branthwaite/">
-        <p class="link">linkedin.com/in/jack-branthwaite</p></a
+        <span class="link">linkedin.com/in/jack-branthwaite</span></a
       >
     </div>
     <div class="contact-container">
       <h1 class="sub-title">github</h1>
       <a href="https://github.com/jackbranthwaite"
-        ><p class="link">github.com/jackbranthwaite</p></a
+        ><span class="link">github.com/jackbranthwaite</span></a
       >
     </div>
   </div>
@@ -34,6 +34,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import '~assets/styles/config';
 .container {
   margin-top: 2vw;
 }
@@ -45,5 +46,11 @@ export default Vue.extend({
 }
 .title {
   margin-bottom: 2vw;
+}
+.link {
+  transition: all 0.5s ease;
+  &:hover {
+    color: $orange;
+  }
 }
 </style>
