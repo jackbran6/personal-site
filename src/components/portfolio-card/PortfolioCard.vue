@@ -48,4 +48,8 @@ export default Vue.extend({
     box-shadow: $orange 5px 10px;
   }
 }
+.image {
+  height: 150px;
+  width: 300px;
+}
 </style>

@@ -2,7 +2,10 @@
   <div class="container">
     <h1 class="title">portfolio</h1>
     <div class="card-container">
-      <portfolio-card />
+      <portfolio-card
+        title="Todo List Website"
+        description="A simple todo list application built in Vanilla JavaScript. Based on a tutorial found on YouTube"
+      />
       <portfolio-card />
       <portfolio-card />
       <portfolio-card />
@@ -16,6 +19,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+
 import PortfolioCard from '~/components/portfolio-card/PortfolioCard.vue'
 
 export default Vue.extend({
