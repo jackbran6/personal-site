@@ -32,17 +32,34 @@
         description="A simple todo list application built in Vanilla JavaScript. Based on a tutorial found on YouTube"
         link="6"
       />
+      <button @click="console">Click</button>
     </div>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue'
-
+import { defineComponent } from '@vue/composition-api'
+import { useContext, useAsync } from '@nuxtjs/composition-api'
 import PortfolioCard from '~/components/portfolio-card/PortfolioCard.vue'
 
-export default Vue.extend({
+export default defineComponent({
   name: 'Portfolio',
-  components: { PortfolioCard }
+  components: { PortfolioCard },
+  setup() {
+    const { $prismic } = useContext()
+
+    const projects = useAsync(async () => {
+      return await $prismic.api.query(
+        $prismic.predicates.at('document.type', 'project')
+      )
+    })
+
+    return { projects }
+  },
+  methods: {
+    console() {
+      console.log(this.projects)
+    }
+  }
 })
 </script>
 

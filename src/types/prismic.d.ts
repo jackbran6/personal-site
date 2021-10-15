@@ -1,12 +1,9 @@
-import { getApi } from 'prismic-javascript'
-import { DefaultClient } from 'prismic-javascript/d.ts/client'
-
-import Vue from 'vue'
-
+import ResolvedApi from '@prismicio/client/types/ResolvedApi'
+import { DefaultClient } from '@prismicio/client/types/client'
+import Predicates from '@prismicio/client/types/Predicates'
 type ThenArg<T> = T extends Promise<infer U> ? U : T
-type PrismicAPIPromise = ReturnType<typeof getApi>
-type PrismicAPI = ThenArg<PrismicAPIPromise>
-
+type PrismicAPIPromise = Promise<ResolvedApi>
+type PrismicAPI = { api: ThenArg<PrismicAPIPromise> }
 type ElementType =
   | 'heading1'
   | 'heading2'
@@ -27,9 +24,7 @@ type ElementType =
   | 'hyperlink'
   | 'label'
   | 'span'
-
 type Elements = { [key in ElementType]: string }
-
 type HTMLSerializer<T> = (
   type: ElementType,
   element: any,
@@ -37,7 +32,6 @@ type HTMLSerializer<T> = (
   children: T[],
   index: number
 ) => T
-
 interface RichText {
   Elements: Elements
   asHtml(
@@ -47,23 +41,28 @@ interface RichText {
   ): string
   asText(richText: any, joinString?: string): string
 }
-
 interface Link {
   url(link: any, linkResolver?: (doc: any) => string): string
 }
-
 interface VuePrismic {
   endpoint: string
   linkResolver: (doc: any) => string
   htmlSerializer: HTMLSerializer<string>
   client: DefaultClient
   richTextAsPlain: (field: string) => string
+  predicates: typeof Predicates
 }
-
 type PrismicVue<T> = VuePrismic & T
-
 declare module 'vue/types/vue' {
   interface Vue {
+    $prismic: PrismicVue<PrismicAPI>
+  }
+}
+declare module '@nuxt/types' {
+  interface NuxtAppOptions {
+    $prismic: PrismicVue<PrismicAPI>
+  }
+  interface Context {
     $prismic: PrismicVue<PrismicAPI>
   }
 }
