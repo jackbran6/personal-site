@@ -1,6 +1,7 @@
 <template>
   <nuxt-link class="link" :to="'portfolio/project/' + link">
     <div class="card">
+      <img :src="image" class="title-image" />
       <h1 class="title">{{ title }}</h1>
       <p class="description">
         {{ description }}
@@ -26,6 +27,10 @@ export default Vue.extend({
       type: String,
       default:
         'This is a short description about the project that is being displayed here'
+    },
+    image: {
+      type: String,
+      default: ''
     }
   }
 })
@@ -40,6 +45,7 @@ export default Vue.extend({
 }
 .card {
   border: #000 solid 1px;
+  border-radius: 5px;
   box-shadow: 5px 10px;
   min-height: 150px;
   min-width: 300px;
@@ -48,6 +54,10 @@ export default Vue.extend({
   &:hover {
     box-shadow: $orange 5px 10px;
   }
+}
+.title-image {
+  border-radius: 5px;
+  padding-bottom: 1rem;
 }
 .image {
   height: 150px;

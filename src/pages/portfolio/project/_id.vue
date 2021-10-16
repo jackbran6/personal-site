@@ -1,12 +1,32 @@
 <template>
-  <div class="container">
-    <h1 class="title">{{}}</h1>
+  <div v-if="project" class="container">
+    <h1 class="title">{{ project.title[0].text }}</h1>
   </div>
 </template>
 <script lang="ts">
-import Vue from 'vue'
+import {
+  computed,
+  defineComponent,
+  useAsync,
+  useContext,
+  useRoute
+} from '@nuxtjs/composition-api'
 
-export default Vue.extend({})
+export default defineComponent({
+  setup() {
+    const route = useRoute()
+    const id = route.value.params.id
+    const { $prismic } = useContext()
+
+    const getProject = useAsync(async () => {
+      return await $prismic.api.query($prismic.predicates.at('document.id', id))
+    })
+
+    const project = computed(() => getProject.value?.results[0].data)
+
+    return { project }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

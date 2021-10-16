@@ -1,38 +1,17 @@
 <template>
-  <div class="container">
+  <div v-if="projects" class="container">
     <h1 class="title">portfolio</h1>
-    <div class="card-container">
+    <div
+      v-for="project in projects.results"
+      :key="project.id"
+      class="card-container"
+    >
       <portfolio-card
-        title="Photography Website"
-        description="Personal photography website built in HTML, CSS, JavaScript, and PHP for  a university project"
-        link="1"
+        :title="project.data.title[0].text"
+        :description="project.data.description[0].text"
+        :image="project.data.title_image.url"
+        :link="project.id"
       />
-      <portfolio-card
-        title="Workplace Employee Site"
-        description="Group unversity project built with the MERN stack. "
-        link="2"
-      />
-      <portfolio-card
-        title="Android Web Browser"
-        description="Web browser built in Java for a university project"
-        link="3"
-      />
-      <portfolio-card
-        title="Android Todo List"
-        description="Todo list application built in Java for a university project"
-        link="4"
-      />
-      <portfolio-card
-        title="iOS Todo List"
-        description="Todo list application built in Swift for a university project"
-        link="5"
-      />
-      <portfolio-card
-        title="Todo List Website"
-        description="A simple todo list application built in Vanilla JavaScript. Based on a tutorial found on YouTube"
-        link="6"
-      />
-      <button @click="console">Click</button>
     </div>
   </div>
 </template>
@@ -54,11 +33,6 @@ export default defineComponent({
     })
 
     return { projects }
-  },
-  methods: {
-    console() {
-      console.log(this.projects)
-    }
   }
 })
 </script>
@@ -89,3 +63,29 @@ export default defineComponent({
   }
 }
 </style>
+
+<!-- <portfolio-card
+        title="Workplace Employee Site"
+        description="Group unversity project built with the MERN stack. "
+        link="2"
+      />
+      <portfolio-card
+        title="Android Web Browser"
+        description="Web browser built in Java for a university project"
+        link="3"
+      />
+      <portfolio-card
+        title="Android Todo List"
+        description="Todo list application built in Java for a university project"
+        link="4"
+      />
+      <portfolio-card
+        title="iOS Todo List"
+        description="Todo list application built in Swift for a university project"
+        link="5"
+      /> -->
+<!-- <portfolio-card
+        title="Todo List Website"
+        description="A simple todo list application built in Vanilla JavaScript. Based on a tutorial found on YouTube"
+        link="6"
+      /> -->
