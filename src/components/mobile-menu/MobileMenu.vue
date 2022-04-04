@@ -77,10 +77,12 @@ export default Vue.extend({
 
 @keyframes growDown {
   0% {
+    opacity: 0;
     transform: scaleY(0);
   }
 
   100% {
+    opacity: 1;
     transform: scaleY(1);
   }
 }
@@ -89,5 +91,7 @@ export default Vue.extend({
   align-items: flex-end;
   display: flex;
   flex-direction: column;
+  position: absolute;
+  right: 1.5rem;
 }
 </style>

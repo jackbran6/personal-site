@@ -37,6 +37,7 @@ export default Vue.extend({
 .hamburger {
   cursor: pointer;
   height: 10px;
+  margin-bottom: 5px;
   margin-top: 5px;
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;

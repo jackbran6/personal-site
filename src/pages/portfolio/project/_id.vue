@@ -1,6 +1,16 @@
 <template>
   <div v-if="project" class="container">
     <h1 class="title">{{ project.title[0].text }}</h1>
+    <p class="long-description">{{ project.long_description[0].text }}</p>
+    <div class="card-container">
+      <div
+        v-for="(image, i) in project.body[0].items"
+        :key="i"
+        class="image_wrapper"
+      >
+        <img :src="image.image.url" />
+      </div>
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -24,7 +34,9 @@ export default defineComponent({
 
     const project = computed(() => getProject.value?.results[0].data)
 
-    return { project }
+    return {
+      project
+    }
   }
 })
 </script>
